@@ -1,0 +1,32 @@
+<div class="container d-flex justify-content-center align-items-center full-height">
+    <div class="row justify-content-center text-center cn-custom">
+       
+        <H1 class="my-auto mb-3 py-2 gap-3">Registrate aqui</H1>
+        <div class="col-sm-8">
+          <form (submit)="register()" #registerForm="ngForm" novalidate>
+          <!-- <div class="input-group flex-nowrap mb-3">  
+            <span class="input-group-text py-3" id="addon-wrapping">@</span>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+          </div> -->
+          <div class="form-floating col mb-3">
+            <input type="email" [(ngModel)]="email" name="email" class="form-control" id="RegisterEmail" placeholder="name@example.com" required  [ngClass]="{'is-invalid': registerForm.submitted && registerForm.controls['email'].invalid}">
+            <label for="RegisterEmail">Email address</label>
+            <div *ngIf="registerForm.submitted && registerForm.controls['email']?.invalid" class="invalid-feedback">
+              Por favor igresa un correo electronico.
+            </div>
+          </div>
+          <div class="form-floating col ">
+            <input type="text" class="form-control" [(ngModel)]="password" name="password" id="RegisterPassword" placeholder="Password" required  [ngClass]="{'is-invalid': registerForm.submitted && registerForm.controls['password'].invalid}">
+            <label for="RegisterPassword">Contraseña</label>
+            <div *ngIf="registerForm.submitted && registerForm.controls['password']?.invalid" class="invalid-feedback">
+              Por favor ingresa tu contraseña.
+            </div>
+          </div>
+          <div class="d-grid gap-2 mb-3 mt-3">
+            <button class="btn btn1-custom" type="submit">Aceptar</button>
+            <a  href="" class="btn btn2-custom" type="button">Cancelar</a>
+        </div>
+      </form>  
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="container d-flex justify-content-center align-items-center mt-5 ">
+  <div class="row justify-content-center w-100 ps-custom">
+    <form class="position-relative col-12 col-md-8 col-lg-6" (ngSubmit)="onSubmit(postproductForm)" #postproductForm="ngForm" novalidate>
+      <div class="mb-3">
+        <h2 class="mb-3">
+          Agrega un nuevo producto
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-plus-fill" viewBox="0 0 16 16">
+            <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M8.5 6v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 1 0" />
+          </svg>
+        </h2>
+      </div>
+      
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Nombre del producto</label>
+        <input type="text" [(ngModel)]="product.name" name="name" class="form-control bd-custom" id="exampleFormControlInput1" placeholder="Agrega el nombre del producto" required [ngClass]="{'is-invalid': postproductForm.submitted && postproductForm.controls['name']?.invalid}">
+        <div *ngIf="postproductForm.submitted && postproductForm.controls['name']?.invalid" class="invalid-feedback">
+          Por favor, añade el nombre del producto.
+        </div>
+      </div>
+      
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+        <textarea [(ngModel)]="product.description" class="form-control bd-custom" id="exampleFormControlTextarea1" name="description" rows="3" placeholder="Agrega la descripción de un producto" required [ngClass]="{'is-invalid': postproductForm.submitted && postproductForm.controls['description']?.invalid}" style="resize: none;  height: 100px; overflow: auto;"></textarea>
+        <div *ngIf="postproductForm.submitted && postproductForm.controls['description']?.invalid" class="invalid-feedback">
+          Por favor, añade una descripción del producto.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Precio</label>
+        <input [(ngModel)]="product.price" type="number" class="form-control bd-custom" name="price" aria-label="Amount (to the nearest dollar)" placeholder="añade el precio del producto" required [ngClass]="{'is-invalid': postproductForm.submitted && postproductForm.controls['price']?.invalid}">
+        <div *ngIf="postproductForm.submitted && postproductForm.controls['price']?.invalid" class="invalid-feedback">
+          Por favor, añade el precio del producto.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Imagen de portada</label>
+        <input (change)="onCoverImageChange($event)" class="form-control bd-custom " type="file" id="formFile" name="coverImage" placeholder="añade la imagen de portada" accept="image/*" required [ngClass]="{'is-invalid': postproductForm.submitted && postproductForm.controls['coverImage']?.invalid}">
+        <div *ngIf="postproductForm.submitted && postproductForm.controls['coverImage']?.invalid" class="invalid-feedback">
+          Por favor, añade una imagen de portada.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="formFileMultiple" class="form-label">Imagenes del producto</label>
+        <input (change)="onProductImagesChange($event)" class="form-control bd-custom " type="file" id="formFileMultiple" name="productImages" multiple placeholder="añade varias imagenes" accept="image/*" required [ngClass]="{'is-invalid': postproductForm.submitted && postproductForm.controls['productImages']?.invalid}">
+        <div *ngIf="postproductForm.submitted && postproductForm.controls['productImages']?.invalid" class="invalid-feedback">
+          Por favor, añade al menos una imagen del producto.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="quantity" class="form-label">Cantidad en stock</label>
+        <input type="number" id="quantity" name="stock" [(ngModel)]="product.stock" class="form-control bd-custom " min="1" required [ngClass]="{'is-invalid': postproductForm.submitted && postproductForm.controls['stock']?.invalid}">
+        <div *ngIf="postproductForm.submitted && postproductForm.controls['quantity']?.invalid" class="invalid-feedback">
+          Por favor, añade la cantidad en stock.
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between mt-3">
+        <button [routerLink]="['/core']" type="button" class="btn btn2-custom" style="color: aliceblue;">Cancelar</button>
+        <button type="submit" class="btn btn1-custom" style="color: aliceblue;">Subir</button>
+      </div>
+    </form>
+  </div>
+</div>
+

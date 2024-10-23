@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let product of filteredProducts" class="col-md-4 mb-4 crd-custom">
+      <div class="card" style="width: 100%;">
+        <img [src]="product.coverImage" [routerLink]="['/slides']" class="card-img-top" alt="{{ product.name }}">
+        <div class="card-body" style="height: 16rem;">
+          <h6 class="card-title crd-title fw-medium">{{ product.name }}</h6>
+          <div class="card-text fs-6 mb-3">
+            {{ product.description }}
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="justify-content-center mt-2 col">
+            <p class="">In stock: {{product.stock}} </p>
+          <button class="btn btn1-custom  col-ms-6 mt-2">Agregar al carrito</button>
+            </div>
+          <p class="fw-medium">{{product.price}} RD$</p>
+      </div>
+    </div>
+  </div>
+</div>

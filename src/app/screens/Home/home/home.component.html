@@ -1,0 +1,20 @@
+<app-nabvar></app-nabvar>
+
+<!-- home.component.html -->
+<div class="container mt-3">
+  <div class="row">
+    <div class="col d-flex justify-content-start">
+      <h4>Welcome!</h4>
+    </div>
+    <div class="col d-flex justify-content-end">
+      <app-search (searchTermChange)="onSearchTermChange($event)"></app-search>
+    </div>
+  </div>
+</div>
+
+
+<div class="container mt-3">
+  <app-product [searchTerm]="searchTerm">
+  </app-product>
+  
+</div>
