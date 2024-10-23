@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
     <div *ngFor="let product of filteredProducts" class="col-md-4 mb-4 crd-custom">
-      <div class="card" style="width: 100%;">
+      <div class="card">
         <img [src]="product.coverImage" [routerLink]="['/slides']" class="card-img-top" alt="{{ product.name }}">
-        <div class="card-body" style="height: 16rem;">
+        <div class="card-body">
           <h6 class="card-title crd-title fw-medium">{{ product.name }}</h6>
           <div class="card-text fs-6 mb-3">
             {{ product.description }}
