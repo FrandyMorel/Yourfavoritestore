@@ -9,6 +9,7 @@ import { ImgcolectionComponent } from './Components/imgcolection/imgcolection/im
 import { CoreHomeComponent } from './Core/screens/core-home/core-home.component';
 import { ProductPostComponent } from './Core/screens/Post/product-post/product-post.component';
 import { CartComponent } from './screens/cart/cart.component';
+import { DetailComponent } from './screens/detail/detail.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'slides', component: ImgcolectionComponent},
   {path: 'core', component: CoreHomeComponent},
   {path: 'PostProduct', component: ProductPostComponent},
-  {path: 'Cart', component: CartComponent}
+  {path: 'Cart', component: CartComponent},
+  {path: 'Detail', component: DetailComponent},
 ];
 
 @NgModule({
