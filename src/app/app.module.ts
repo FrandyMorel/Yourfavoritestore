@@ -25,6 +25,7 @@ import { ProductPostComponent } from './Core/screens/Post/product-post/product-p
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { CartComponent } from './screens/cart/cart.component';
 import { DetailComponent } from './screens/detail/detail.component';
+import { FilterComponent } from './Components/filter/filter.component';
 
 
 
@@ -42,6 +43,7 @@ import { DetailComponent } from './screens/detail/detail.component';
     ProductPostComponent,
     CartComponent,
     DetailComponent,
+    FilterComponent,
     ],
   imports: [
     BrowserModule,

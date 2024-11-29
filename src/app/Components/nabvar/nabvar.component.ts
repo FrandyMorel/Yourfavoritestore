@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/Api/Auth.service';
 
+
 @Component({
   selector: 'app-nabvar',
   templateUrl: './nabvar.component.html',
