@@ -98,6 +98,13 @@ transform: scaleX(0.8);
     box-shadow: 0 2px 4px rgba(0,0,0,0)
   }
 
+  .crd-custom:hover .btn-details{
+    transition: 0.8ms;
+    display: block !important;
+  }
+
+
+
   .slide-custom{
     height: 48rem;
     width: 50rem;
@@ -226,4 +233,43 @@ height: 100%;
 
 .card-body{
   height: 16rem;
+}
+
+.btn-details {
+  color: #2a3d38c6;
+  display: none; /* Oculta el botón por defecto */
+  z-index: 10; /* Asegura que el botón esté por encima del contenido */
+
+  &:hover{
+    color: #2a3d38c6;
+  }
+  &:active{
+    color: #2a3d38c6;
+  }
+}
+
+.carousel-custom {
+  border-radius: 6px;
+  width: 50vw; /* 50% del ancho de la pantalla */
+  height: 40vh; /* 30% del alto de la pantalla */
+  position: relative;
+  left: 0; /* Pegado al lado izquierdo */
+  margin: 0; /* Sin márgenes extras */
+  overflow: hidden; /* Asegura que no se vea fuera del contenedor */
+  background-color: #f8f9fafd; /* Fondo claro para imágenes más pequeñas */
+  box-shadow: 2px 8px 12px rgba(199, 191, 191, 0.252)
+}
+
+.carousel-inner img {
+  width: 100%; /* Ajusta el ancho de la imagen al carrusel */
+  height: 100%; /* Ajusta la altura de la imagen al carrusel */
+  object-fit: contain; /* Asegura que la imagen no se recorte */
+  background-color: #000; /* Fondo oscuro detrás de las imágenes si son más pequeñas */
+}
+
+.detail-text {
+  max-height: 10rem;
+  max-width: 70rem;
+  overflow-y: auto;
+  border-radius: 4px;
 }

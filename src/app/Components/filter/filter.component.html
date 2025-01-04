@@ -6,13 +6,18 @@
     </div>
 <div class="offcanvas-body">
     <div class="col-md-12">
+      <div class="container justify-content-center mb-4">
+      <div class="row">
+      <button class="btn btn1-custom" (change)="onCategoryChange('')" checked>Todos</button>
+      </div>
+      </div>
       <h4 class="mb-2">Ropa de niño</h4>
       <div class="row">
    <div class="btn-group-vertical mt-3" role="group" aria-label="Vertical button group">
     <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off">
     <label class="btn bt-chk" for="option1">Camisetas</label>
     <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-    <label class="btn bt-chk" for="option2">Pantalones</label>
+    <label class="btn bt-chk" for="option2" (change)="onCategoryChange('Pantalones')">Pantalones</label>
     <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
     <label class="btn bt-chk" for="option3">Calzados</label>
     <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">

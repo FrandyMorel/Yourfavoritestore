@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-filter',
@@ -6,16 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent {
-  
-  searchTerm: string = ''; // Término de búsqueda ingresado
-  selectedCategory: string = ''; // Categoría seleccionada
+  @Output() categoryChange = new EventEmitter<string>();
+  @Output() searchTermChange = new EventEmitter<string>();
+
+  searchTerm: string = '';
+  selectedCategory: string = '';
 
   onCategoryChange(category: string): void {
-    this.selectedCategory = category; // Actualiza la categoría seleccionada
+    this.selectedCategory = category;
+    this.categoryChange.emit(this.selectedCategory); // Emitir evento para cambiar categoría
   }
 
   onSearchTermChange(term: string): void {
-    this.searchTerm = term; // Actualiza el término de búsqueda
+    this.searchTerm = term;
+    this.searchTermChange.emit(this.searchTerm); // Emitir evento para cambiar término de búsqueda
   }
 
 }
