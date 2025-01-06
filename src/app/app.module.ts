@@ -23,9 +23,9 @@ import { SearchComponent } from './Components/search/search.component';
 import { CoreHomeComponent } from './Core/screens/core-home/core-home.component';
 import { ProductPostComponent } from './Core/screens/Post/product-post/product-post.component';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
-import { CartComponent } from './screens/cart/cart.component';
 import { DetailComponent } from './screens/detail/detail.component';
 import { FilterComponent } from './Components/filter/filter.component';
+import { CartComponent } from './Components/cart/cart.component';
 
 
 
@@ -41,9 +41,9 @@ import { FilterComponent } from './Components/filter/filter.component';
     SearchComponent,
     CoreHomeComponent,
     ProductPostComponent,
-    CartComponent,
     DetailComponent,
     FilterComponent,
+    CartComponent,
     ],
   imports: [
     BrowserModule,

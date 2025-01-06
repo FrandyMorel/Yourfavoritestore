@@ -8,7 +8,6 @@ import { HomeComponent } from './screens/Home/home/home.component';
 import { ImgcolectionComponent } from './Components/imgcolection/imgcolection/imgcolection.component';
 import { CoreHomeComponent } from './Core/screens/core-home/core-home.component';
 import { ProductPostComponent } from './Core/screens/Post/product-post/product-post.component';
-import { CartComponent } from './screens/cart/cart.component';
 import { DetailComponent } from './screens/detail/detail.component';
 
 const routes: Routes = [
@@ -18,7 +17,6 @@ const routes: Routes = [
   {path: 'slides', component: ImgcolectionComponent},
   {path: 'core', component: CoreHomeComponent},
   {path: 'PostProduct', component: ProductPostComponent},
-  {path: 'Cart', component: CartComponent},
   { path: 'Detail/:id', component: DetailComponent }
 ];
 
