@@ -83,8 +83,8 @@ transform: scaleX(0.8);
   }
 
   .crd-title{ 
-    max-height: 3rem;
-    overflow-y: auto;
+    max-height: 2rem;
+   
   }
   
   .card-text {
@@ -239,6 +239,7 @@ height: 100%;
   color: #2a3d38c6;
   display: none; /* Oculta el botón por defecto */
   z-index: 10; /* Asegura que el botón esté por encima del contenido */
+  border: none;
 
   &:hover{
     color: #2a3d38c6;
@@ -250,7 +251,7 @@ height: 100%;
 
 .carousel-custom {
   border-radius: 6px;
-  width: 50vw; /* 50% del ancho de la pantalla */
+  width: 42vw; /* 50% del ancho de la pantalla */
   height: 40vh; /* 30% del alto de la pantalla */
   position: relative;
   left: 0; /* Pegado al lado izquierdo */
@@ -274,3 +275,94 @@ height: 100%;
   border-radius: 4px;
 }
 
+/* Ocultar el círculo predeterminado del input radio */
+input[type="radio"].btn-size {
+  display: none;
+}
+
+/* Estilo base del label (botón) */
+.btn-size {
+  background-color: transparent;
+  color: #836FFF;
+  padding: 25%;
+  width: 10rem;
+  border: 2px solid #836FFF;
+  border-radius: 3px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: inline-block;
+}
+
+/* Estilo cuando se pasa el mouse */
+.btn-size:hover {
+
+
+  background-color: transparent;
+  color:  #836FFF;
+  border-color:  #836FFF;
+}
+
+/* Estilo del botón cuando el input está marcado */
+input[type="radio"].btn-size:checked + .btn-size {
+  background-color: #836FFF;
+  color: #F0F3FF;
+  border: 2px solid #836FFF;
+  box-shadow: 2px 6px 8px #372e73;
+  transform: scale(1.00);
+}
+
+.btn-counter{
+  background-color: transparent;
+  color: #836FFF;
+  border: 2px solid #836FFF;
+  border-radius: 3px;
+  padding: 8px 16px;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+  background-color: #836FFF;
+  color: #F0F3FF;
+  border: 2px solid #836FFF;
+  box-shadow: 2px 2px 4px #372e73;
+  }
+  &:active{
+    transform: scale(0.95);
+    background-color: #836FFF;
+    color: #F0F3FF;
+    border: 2px solid #836FFF;
+    box-shadow: 2px 2px 4px #372e73;
+  }
+}
+
+
+.impt-counter{
+  background-color: transparent;
+  border: 2px solid #836FFF;
+  text-align: center;
+}
+
+
+.input-group input[type="number"] {
+  text-align: center;
+}
+
+/* Ocultar las flechas del input number */
+.input-group input[type="number"]::-webkit-inner-spin-button,
+.input-group input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.input-group input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.input-group button {
+  min-width: 40px;
+}

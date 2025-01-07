@@ -14,8 +14,10 @@ import { v4 as uuidv4 } from 'uuid';
 export class ProductPostComponent {
   
   product: any = {
-    images: []
+    images: [],
+    sizes: []
   };
+  newSize: string = '';
   
   constructor() {
     const auth = getAuth();
@@ -24,14 +26,26 @@ export class ProductPostComponent {
         console.log('User is signed in:', user);
       } else {
         console.log('No user is signed in');
-        // Redirigir al usuario a la página de inicio de sesión si no está autenticado
-        // Puedes usar el router de Angular para esto
       }
     });
   }
 
+  addSize() {
+    if (this.newSize && !this.product.sizes.includes(this.newSize)) {
+      this.product.sizes.push(this.newSize + ' US');
+      this.newSize = '';
+    }
+  }
+
+  removeSize(size: string) {
+    const index = this.product.sizes.indexOf(size);
+    if (index > -1) {
+      this.product.sizes.splice(index, 1);
+    }
+  }
+
   async onSubmit(productForm: NgForm) {
-    if (!productForm.valid) {
+    if (!productForm.valid || this.product.sizes.length === 0) {
       return;
     }
   
@@ -72,6 +86,8 @@ export class ProductPostComponent {
   
       // Limpiar el formulario después de guardar
       productForm.reset();
+      this.product.sizes = []; // Limpiar las tallas
+      this.product.images = []; // Limpiar las imágenes
     } catch (error) {
       console.error('Error al guardar el producto:', error);
     }
@@ -86,7 +102,11 @@ export class ProductPostComponent {
     this.product.images = Array.from(event.target.files);
   }
 
-  clearForm (event: any) {
-    this.clearForm
+  clearForm(event: any) {
+    this.product = {
+      images: [],
+      sizes: []
+    };
+    this.newSize = '';
   }
 }

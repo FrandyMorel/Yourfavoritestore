@@ -43,6 +43,25 @@
       </div>
 
       <div class="mb-3">
+        <label class="form-label">Tallas disponibles</label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control bd-custom" [(ngModel)]="newSize" name="newSize" placeholder="Añadir talla (ej: 8)">
+          <button class="btn btn1-custom" type="button" (click)="addSize()">Añadir</button>
+        </div>
+        
+        <div class="row g-2">
+          <div class="col-4" *ngFor="let size of product.sizes">
+            <div class="d-flex justify-content-between align-items-center border rounded p-2"> {{size}} <button type="button" class="btn btn-sm btn2-custom"  
+              (click)="removeSize(size)">  ×</button>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="postproductForm.submitted && product.sizes.length === 0" class="invalid-feedback d-block">
+          Por favor, añade al menos una talla.
+        </div>
+      </div>
+
+      <div class="mb-3">
         <label for="formFileMultiple" class="form-label">Imagenes del producto</label>
         <input (change)="onProductImagesChange($event)" class="form-control bd-custom " type="file" id="formFileMultiple" name="productImages" multiple placeholder="añade varias imagenes" accept="image/*" required [ngClass]="{'is-invalid': postproductForm.submitted && postproductForm.controls['productImages']?.invalid}">
         <div *ngIf="postproductForm.submitted && postproductForm.controls['productImages']?.invalid" class="invalid-feedback">

@@ -44,6 +44,7 @@ import { CartComponent } from './Components/cart/cart.component';
     DetailComponent,
     FilterComponent,
     CartComponent,
+
     ],
   imports: [
     BrowserModule,
