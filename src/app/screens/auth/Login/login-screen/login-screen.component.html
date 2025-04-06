@@ -1,15 +1,16 @@
 
 
 <div class="container d-flex justify-content-center align-items-center full-height">
-<div class="col text-center">
+<div class="text-center">
   <div class="row justify-content-center fh"> 
-    <div class="col-sm-5 me-3 my-auto">
-      <img src="/assets/imgs/tu-tienda-fisica13431065.jpeg"  class="img-fluid rounded"  alt="">
+    <div class="col-sm-6 me-3 my-auto">
+      <img src="/assets/imgs/Logo fashion kids.jpeg"  class="img-fluid rounded"  alt="Logo de Fashion kids">
     </div> 
-    <div class="col-sm-auto my-auto">
-      <h1 class="mb-3">Inicia sesión</h1>
- 
-      <form (ngSubmit)="signIn()" #signInForm="ngForm" novalidate>
+    
+    <div class="col-sm-auto my-auto offset-1 me-5">
+      <h1 class="mb-3 mt-3">Inicia sesión</h1>
+      <hr class="mb-4">
+      <form (ngSubmit)="signIn()" #signInForm="ngForm"  novalidate>
         <div class="form-floating mb-3">
           <input type="email" [(ngModel)]="email" name="email" class="form-control" id="LoginEmail" placeholder="name@example.com" required
             [ngClass]="{'is-invalid': signInForm.submitted && signInForm.controls['email'].invalid}" />
@@ -18,29 +19,33 @@
             Por favor introduce una contraseña.
           </div>
         </div>
-        <div class="form-floating mb-3">
-          <input type="password" [(ngModel)]="password" name="password" class="form-control" id="floatingPassword" placeholder="Password"required
-            [type]="showPassword ? 'text' : 'password'"
-            [ngClass]="{'is-invalid': signInForm.submitted && signInForm.controls['password'].invalid}" />
-          <label for="floatingPassword">Contraseña</label>
-          <span class="position-absolute top-50 translate-middle-y end-0 me-3" *ngIf="!(signInForm.submitted && signInForm.controls['password']?.invalid)">
-            <svg type="button" (click)="togglePassword()" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
-              <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" /></svg>
-          </span>
-          <div *ngIf="signInForm.submitted && signInForm.controls['password']?.invalid" class="invalid-feedback">
-            Por favor introduce una contraseña.
-          </div>
+  
+<div class="form-floating mb-3">
+    <input type="password" [(ngModel)]="password" name="password" class="form-control" id="floatingPassword" placeholder="Password"required
+            [type]="showPassword ? 'text' : 'password' "[ngClass]="{'is-invalid': signInForm.submitted && signInForm.controls['password'].invalid}"/>
+            
+ <label for="floatingPassword">Contraseña</label>
+        <span class="position-absolute top-50 translate-middle-y end-0 me-3" *ngIf="!(signInForm.submitted && signInForm.controls['password']?.invalid)">  
+          <svg (click)="togglePassword()" *ngIf="!showPassword" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="0" fill="#171414"><animate attributeName="r" dur="6s" keyTimes="0;0.03;0.97;1" repeatCount="indefinite" values="0;3;3;0"/></circle><path fill="none" stroke="#171414" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12c1.38 -0.77 4.42 -1.3 8 -1.3c3.58 0 6.62 0.53 8 1.3c-1.38 0.77 -4.42 1.3 -8 1.3c-3.58 0 -6.62 -0.53 -8 -1.3Z"><animate attributeName="d" dur="6s" keyTimes="0;0.03;0.97;1" repeatCount="indefinite" values="M4 12c1.38 -0.77 4.42 -1.3 8 -1.3c3.58 0 6.62 0.53 8 1.3c-1.38 0.77 -4.42 1.3 -8 1.3c-3.58 0 -6.62 -0.53 -8 -1.3Z;M2 12c1.72 -3.83 5.53 -6.5 10 -6.5c4.47 0 8.28 2.67 10 6.5c-1.72 3.83 -5.53 6.5 -10 6.5c-4.47 0 -8.28 -2.67 -10 -6.5Z;M2 12c1.72 -3.83 5.53 -6.5 10 -6.5c4.47 0 8.28 2.67 10 6.5c-1.72 3.83 -5.53 6.5 -10 6.5c-4.47 0 -8.28 -2.67 -10 -6.5Z;M4 12c1.38 -0.77 4.42 -1.3 8 -1.3c3.58 0 6.62 0.53 8 1.3c-1.38 0.77 -4.42 1.3 -8 1.3c-3.58 0 -6.62 -0.53 -8 -1.3Z"/>
+          </path></svg>
+          <svg (click)="togglePassword()"   *ngIf="showPassword" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><mask id="lineMdWatchOffLoop0"><g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="0" fill="#fff" stroke="none"><animate attributeName="r" dur="6s" keyTimes="0;0.03;0.97;1" repeatCount="indefinite" values="0;3;3;0"/></circle><path d="M4 12c1.38 -0.77 4.42 -1.3 8 -1.3c3.58 0 6.62 0.53 8 1.3c-1.38 0.77 -4.42 1.3 -8 1.3c-3.58 0 -6.62 -0.53 -8 -1.3Z"><animate attributeName="d" dur="6s" keyTimes="0;0.03;0.97;1" repeatCount="indefinite" values="M4 12c1.38 -0.77 4.42 -1.3 8 -1.3c3.58 0 6.62 0.53 8 1.3c-1.38 0.77 -4.42 1.3 -8 1.3c-3.58 0 -6.62 -0.53 -8 -1.3Z;M2 12c1.72 -3.83 5.53 -6.5 10 -6.5c4.47 0 8.28 2.67 10 6.5c-1.72 3.83 -5.53 6.5 -10 6.5c-4.47 0 -8.28 -2.67 -10 -6.5Z;M2 12c1.72 -3.83 5.53 -6.5 10 -6.5c4.47 0 8.28 2.67 10 6.5c-1.72 3.83 -5.53 6.5 -10 6.5c-4.47 0 -8.28 -2.67 -10 -6.5Z;M4 12c1.38 -0.77 4.42 -1.3 8 -1.3c3.58 0 6.62 0.53 8 1.3c-1.38 0.77 -4.42 1.3 -8 1.3c-3.58 0 -6.62 -0.53 -8 -1.3Z"/></path><path stroke="#000" stroke-dasharray="28" stroke-dashoffset="28" d="M0 11h24" transform="rotate(45 12 12)"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.4s" values="28;0"/></path><path stroke-dasharray="28" stroke-dashoffset="28" d="M-1 13h24" transform="rotate(45 12 12)"><animate attributeName="d" dur="6s" repeatCount="indefinite" values="M-1 13h24;M1 13h24;M-1 13h24"/><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.4s" values="28;0"/>
+          </path></g></mask><rect width="24" height="24" fill="#171414" mask="url(#lineMdWatchOffLoop0)"/></svg>
+        </span>
+        
+        <div *ngIf="signInForm.submitted && signInForm.controls['password']?.invalid" class="invalid-feedback">
+          Por favor introduce una contraseña.
         </div>
-
-      <div class="d-grid gap-2 mt-3">
-        <button class="btn btn1-custom" type="submit">Iniciar sesión</button>
-        <!-- <a  href="" class="btn btn2-custom" type="button">Cancelar</a>  -->
-
-        <p>¿Aun no tienes una cuenta? <a class="link-opacity-50 link-custom" [routerLink]="['/register']" required> Registrate aqui</a></p>
       </div>
-       </form> 
+
+  <div class="d-grid gap-2 mt-3">
+    <button class="btn btn1-custom" type="submit">Iniciar sesión</button>
+        <hr>
+      <p>¿Aun no tienes una cuenta? <a class="link-opacity-50 link-custom ac" [routerLink]="['/register']" required> Registrate aqui</a></p>
     </div>
-      
-    </div>
+   </form> 
+ </div>
+
 </div>
 </div>
+</div>
+
